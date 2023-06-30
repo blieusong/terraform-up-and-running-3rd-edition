@@ -37,7 +37,7 @@ resource "aws_autoscaling_group" "example" {
 
 resource "aws_security_group" "instance" {
   name   = "terraform-example-instance"
-  vpc_id = data.aws_vpc.default.id
+  vpc_id = data.aws_vpc.default.id # must force assigning it to our test VPC
 
   ingress {
     from_port   = var.server_port
@@ -102,7 +102,7 @@ resource "aws_lb_listener" "http" {
 
 resource "aws_security_group" "alb" {
   name   = "terraform-example-alb"
-  vpc_id = data.aws_vpc.default.id
+  vpc_id = data.aws_vpc.default.id # must force assigning it to our test VPC
 
   # allow inbound HTTP requests
   ingress {
