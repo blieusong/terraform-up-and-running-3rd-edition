@@ -53,12 +53,7 @@ resource "aws_dynamodb_table" "terraform_locks" {
 terraform {
   # looks like we can't use variables here
   backend "s3" {
-    bucket = "blieusong-terraform-up-and-running-state"
-    key    = "global/s3/terraform.state"
-    region = "eu-west-1"
-
-    dynamodb_table = "terraform-up-and-running-locks"
-    encrypt        = true
+    key = "global/s3/terraform.state"
   }
 }
 
