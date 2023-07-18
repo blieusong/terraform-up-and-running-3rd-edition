@@ -153,7 +153,7 @@ data "terraform_remote_state" "db" {
 
   config = {
     bucket = "blieusong-terraform-up-and-running-state"
-    key    = "stage/services/data-stores/mysql/terraform.state"
+    key    = "stage/services/data-stores/mysql/terraform.tfstate"
     region = "eu-west-1"
   }
 }
