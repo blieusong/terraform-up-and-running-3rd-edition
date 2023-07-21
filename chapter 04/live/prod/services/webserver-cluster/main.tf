@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "webserver-cluster" {
-  source = "../../../modules/services/webserver-cluster"
+  source = "github.com/blieusong/terraform-up-and-running-3rd-edition//chapter 04/modules/services/webserver-cluster?ref=v0.0.1"
 
   cluster_name           = "webserver-prod"
   db_remote_state_bucket = "blieusong-terraform-up-and-running-state"
